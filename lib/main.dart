@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ngdemo5/pages/signin_page.dart';
+import 'package:ngdemo5/pages/signup_page.dart';
+import 'package:ngdemo5/pages/splash_page.dart';
 import 'package:ngdemo5/pages/home_page.dart';
 
 void main() {
@@ -14,11 +17,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: HomePage(),
+      home: SplashPage(),
+      routes: {
+        SplashPage.id: (context) => SplashPage(),
+        HomePage.id: (context) => HomePage(),
+        SignInPage.id: (context) => SignInPage(),
+        SignUpPage.id: (context) => SignUpPage(),
+      },
     );
   }
 }
